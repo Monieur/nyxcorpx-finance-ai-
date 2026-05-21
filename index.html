@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    NYXCORPX AI FINANCE
+  </title>
+
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+
+  <!-- CHART JS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+
+  <!-- =========================================
+       APP
+  ========================================= -->
+
+  <div class="app">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
+
+    <header>
+
+      <h1>
+        NYXCORPX AI FINANCE
+      </h1>
+
+      <button
+        onclick="toggleMenu()"
+      >
+
+        ☰
+
+      </button>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MENU
+    ========================================= -->
+
+    <div
+      id="moreMenu"
+      class="menu"
+      style="display:none;"
+    >
+
+      <button
+        onclick="resetAll()"
+      >
+
+        Reset All
+
+      </button>
+
+    </div>
+
+
+
+    <!-- =========================================
+         CONTROLS
+    ========================================= -->
+
+    <div class="controls">
+
+
+      <!-- DESCRIPTION -->
+
+      <input
+        type="text"
+        id="desc"
+        placeholder="Description"
+      >
+
+
+      <!-- AMOUNT -->
+
+      <input
+        type="number"
+        id="amount"
+        placeholder="Amount"
+      >
+
+
+      <!-- TYPE -->
+
+      <select id="type">
+
+        <option value="income">
+          Income
+        </option>
+
+        <option value="expense">
+          Expense
+        </option>
+
+      </select>
+
+
+      <!-- CATEGORY -->
+
+      <select id="category">
+
+        <option value="Food">
+          Food
+        </option>
+
+        <option value="Transport">
+          Transport
+        </option>
+
+        <option value="Gaming">
+          Gaming
+        </option>
+
+        <option value="Shopping">
+          Shopping
+        </option>
+
+        <option value="Bills">
+          Bills
+        </option>
+
+        <option value="Business">
+          Business
+        </option>
+
+        <option value="Health">
+          Health
+        </option>
+
+        <option value="Other">
+          Other
+        </option>
+
+      </select>
+
+
+      <!-- CURRENCY -->
+
+      <select id="currency">
+
+        <option value="USD">
+          USD $
+        </option>
+
+        <option value="EUR">
+          EUR €
+        </option>
+
+        <option value="GBP">
+          GBP £
+        </option>
+
+        <option value="XOF">
+          XOF CFA
+        </option>
+
+        <option value="NGN">
+          NGN ₦
+        </option>
+
+        <option value="JPY">
+          JPY ¥
+        </option>
+
+      </select>
+
+
+      <!-- BUTTON -->
+
+      <button
+        onclick="addTransaction()"
+      >
+
+        Add
+
+      </button>
+
+    </div>
+
+
+
+    <!-- =========================================
+         SUMMARY
+    ========================================= -->
+
+    <div class="summary">
+
+
+      <div class="card">
+
+        <h3>
+          Income
+        </h3>
+
+        <p id="income">
+          0
+        </p>
+
+      </div>
+
+
+
+      <div class="card">
+
+        <h3>
+          Expense
+        </h3>
+
+        <p id="expense">
+          0
+        </p>
+
+      </div>
+
+
+
+      <div class="card">
+
+        <h3>
+          Balance
+        </h3>
+
+        <p id="balance">
+          0
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         CHART
+    ========================================= -->
+
+    <div class="chartBox">
+
+      <canvas id="financeChart"></canvas>
+
+    </div>
+
+
+
+    <!-- =========================================
+         AI ANALYSIS
+    ========================================= -->
+
+    <div class="aiBox">
+
+      <h2>
+        AI Analysis
+      </h2>
+
+      <div id="aiText">
+
+        Waiting for data...
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         PREDICTION
+    ========================================= -->
+
+    <div class="predictBox">
+
+      <h2>
+        Prediction
+      </h2>
+
+      <div id="prediction">
+
+        Learning patterns...
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         SEARCH
+    ========================================= -->
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search transaction..."
+    >
+
+
+
+    <!-- =========================================
+         TRANSACTION LIST
+    ========================================= -->
+
+    <ul id="list"></ul>
+
+
+  </div>
+
+
+
+  <!-- =========================================
+       JS
+  ========================================= -->
+
+  <script src="script.js"></script>
+
+
+</body>
+</html>   
